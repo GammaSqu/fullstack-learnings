@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <title>Debugging Exercise: To-Do List</title>
   </head>
   <body>
-    <h1>To-Do List</h1>
-    <input id="taskInput" type="text" placeholder="Add a new task" />
-    <button data-component="add">Add Task</button>
-    <ul class="taskList"></ul>
+    <div class="container-md text-center">
+      <h1>To-Do List</h1>
+      <input
+        class="col-6"
+        id="taskInput"
+        type="text"
+        placeholder="Add a new task"
+      />
+      <button class="btn btn-outline-primary" data-component="add">
+        <i class="bi bi-plus"></i> Add Task
+      </button>
+      <ul
+        class="taskList row g-0 text center list-group position-relative"
+      ></ul>
+    </div>
 
     <script>
       // Select Add button
@@ -38,10 +59,17 @@
       // Function to create a new list item for the task
       function createTaskItem(task) {
         let listItem = document.createElement('li');
+        listItem.classList.add(
+          'list-group-item',
+          'd-flex',
+          'justify-content-between',
+          'align-self-center',
+          'w-75'
+        );
 
         listItem.innerHTML = `
             ${task}
-            <button data-component="delete">Delete</button>
+            <button class="btn btn-outline-danger " data-component="delete"><i class="bi bi-x"></i>Delete</button>
         `;
 
         // Adding a delete button to the task
