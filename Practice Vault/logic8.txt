@@ -1,0 +1,12 @@
+Requirements:
+1. to create a form page?
+2. It has:
+    - firstname
+    - lastname
+    - age
+    - oppucation
+    - avatar url
+    - submit button
+
+3. After click submit button, another container will appear above form, with all the details that was inputted in the form
+    

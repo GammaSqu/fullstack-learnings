@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Click a button will change an input value to "A button is clicked"
+    </title>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+
+      button {
+        font-size: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border: none;
+        border-radius: 5px;
+        margin: 5px;
+        background-color: blue;
+        color: white;
+      }
+
+      input {
+        font-size: 15px;
+        margin: 5px;
+        width: 300px;
+        border-radius: 5px;
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" />
+    <button>Click me to open an alert</button>
+  </body>
+
+  <script>
+    let button = document.querySelector('button');
+    let input = document.querySelector('input');
+
+    button.addEventListener('click', function () {
+      input.value = 'A button is clicked';
+    });
+
+    //Maybe ask him the question of why input.value, and not input.innerHTML?
+  </script>
+</html>

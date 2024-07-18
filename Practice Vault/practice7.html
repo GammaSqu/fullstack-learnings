@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Render or hide a Person object details on the page</title>
+
+    <style>
+      body {
+        background-color: grey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-size: 25px;
+      }
+
+      .container {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        width: 600px;
+      }
+
+      .title {
+        font-weight: bold;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        margin-top: 20px;
+        border-bottom: 1px solid grey;
+      }
+
+      .card {
+        margin: 10px 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid grey;
+        min-height: 100px;
+      }
+
+      .bottom {
+        margin: 10px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      button {
+        background-color: white;
+        color: blue;
+        border-radius: 3px;
+        border: 1px solid;
+        padding: 10px 15px;
+        font-size: 20px;
+      }
+      button:hover {
+        background-color: blue;
+        color: white;
+      }
+      .details {
+        font-weight: bold;
+      }
+      span {
+        font-weight: lighter;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Personal Details</div>
+      <div class="card">Content is hidden</div>
+      <div class="bottom">
+        <button>Show Details</button>
+      </div>
+    </div>
+
+    <script>
+      let button = document.querySelector('button');
+      let cardBody = document.querySelector('.card');
+
+      let person = {
+        firstName: 'John',
+        lastName: 'Doe',
+        age: 30,
+        occupation: 'Software engineer',
+      };
+
+      let isDetailShowed = false;
+      let showDetails = function () {
+        if (isDetailShowed) {
+          isDetailShowed = false;
+          button.innerHTML = 'Show Details';
+          cardBody.innerHTML = 'Content is hidden';
+        } else {
+          isDetailShowed = true;
+          button.innerHTML = 'Hide Details';
+          cardBody.innerHTML = `
+          
+          <p class="details"><div>Name: <span>${person.firstName} ${person.lastName}</span></p>
+          <p>Age: <span>${person.age}</span></p>
+          <p>Occupation: <span>${person.occupation}</span></p>
+          </div>
+          `;
+        }
+      };
+
+      button.addEventListener('click', showDetails);
+    </script>
+  </body>
+</html>

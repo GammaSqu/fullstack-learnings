@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Gather Person details from multiple input then render the Person details
+      to the page when clicking Submit
+    </title>
+
+    <style>
+      body {
+        background-color: grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .container {
+        background-color: white;
+        
+        width: 550px;
+      }
+
+      .card-body{
+        padding: 15px;
+      }
+      .container div{
+        margin: 5px 0;
+      }
+
+      .title{
+        font-weight: bold;
+        border-bottom: 1px solid grey;
+        padding: 20px;
+      }
+
+      .flex {
+        display: flex;
+        gap: 20px;
+        
+        
+        
+      }
+
+      input{
+        width: 100%;
+        text-indent: 10px;
+        min-height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Enter and Submit Your Details</div>
+      <div class="card-body">
+        <div class="flex">
+          <div>
+          <label>First name</label>
+          <input type="text" placeholder="First Name" />
+        </div>
+
+        <div>
+          <label>Last name</label>
+          <input type="text" placeholder="Last Name" />
+        </div>
+      </div>
+        
+      <div class="flex">
+        <div>
+          <label>Age</label>
+          <input type="text" placeholder="Age" />
+        </div>
+        
+        <div>
+          <label>Occupation</label>
+          <input type="text" placeholder="Occupation" />
+        </div>
+        
+      </div>
+      <div>
+        <div>Avatar URL</div>
+        <input type="url" placeholder="https://..." />
+      </div>
+
+      <div>
+        <button>Submit</button>
+      </div>
+    </div>
+  </body>
+</html>

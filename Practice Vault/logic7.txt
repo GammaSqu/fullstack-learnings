@@ -1,0 +1,8 @@
+First Thoughts:
+
+1. Container has personal details
+2. First the details will be hidden
+3. There is a "show details" button
+4. Clicking button will:
+    - Show details
+    - Hide details

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Get names from multiple inputs and print out the full name</title>
+
+    <style>
+      body {
+        display: flex;
+        background-color: #cfcfcf;
+        justify-content: center;
+        font-size: 25px;
+      }
+
+      div {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+
+      .container {
+        background-color: white;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: 50px;
+        width: 100%;
+      }
+
+      .title {
+        font-weight: bold;
+      }
+
+      .input {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      input {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid gray;
+      }
+      button {
+        padding: 10px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <div class="title">Enter Your Names</div>
+        <div class="input">
+          <input class="first" type="text" placeholder="First Name" />
+          <input class="last" type="text" placeholder="Last Name" />
+          <button>Show Full Name</button>
+        </div>
+        <div class="output"></div>
+      </div>
+    </div>
+
+    <script>
+      let firstName = document.querySelector('.first');
+      let lastName = document.querySelector('.last');
+      let button = document.querySelector('button');
+      let output = document.querySelector('.output');
+
+      button.addEventListener('click', function () {
+        output.innerHTML = `Full Name: ${firstName.value} ${lastName.value}`;
+      });
+    </script>
+  </body>
+</html>

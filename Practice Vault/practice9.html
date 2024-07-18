@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Click add or remove <li> from a <ul> by clicking Insert New Item or Remove
+      Last Item buttons
+    </title>
+    <style>
+      body {
+        background-color: grey;
+        font-size: 25px;
+      }
+      .container {
+        background-color: white;
+        max-width: 700px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 7px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .title {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .addButton {
+        margin: 5px;
+        background-color: blue;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        padding: 10px 20px;
+        font-size: 20px;
+      }
+
+      .addButton:hover {
+        background-color: darkblue;
+      }
+      .removeButton {
+        margin: 5px;
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        padding: 10px 20px;
+        font-size: 20px;
+      }
+      .removeButton:hover {
+        background-color: darkred;
+      }
+      .list {
+        list-style: none;
+        padding: 0;
+      }
+      .item {
+        border: 1px solid grey;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Manage List Items</div>
+
+      <button class="addButton">Insert new item</button>
+      <button class="removeButton">Remove last item</button>
+
+      <ul class="list"></ul>
+    </div>
+
+    <script>
+      let addButton = document.querySelector('.addButton');
+      let removeButton = document.querySelector('.removeButton');
+      let list = document.querySelector('.list');
+
+      //Logic
+      //When click addbutton, a new li will be added to ul list
+      //It will have a counting index(?) in it
+      let addList = function () {
+        //currentIndex
+        //innerHTML
+        let allItems = document.querySelectorAll('li');
+        let addingItem = allItems.length + 1;
+        let newItem = document.createElement('li');
+
+        newItem.classList.add('item');
+
+        newItem.innerHTML = addingItem;
+
+        list.appendChild(newItem);
+      };
+
+      let removeList = function () {
+        //in order to remove an item from a list
+        //need to select the last item of list
+        let allItems = document.querySelectorAll('li');
+        lastItem = allItems[allItems.length - 1];
+
+        if (lastItem) {
+          lastItem.remove();
+        } else {
+          alert('No Items to Remove');
+        }
+      };
+
+      addButton.addEventListener('click', addList);
+      removeButton.addEventListener('click', removeList);
+      //When click removeButton, it will remove the last li of the ul list
+      //There will also be an alert if there is nothing to remove = alert.message?
+    </script>
+  </body>
+</html>

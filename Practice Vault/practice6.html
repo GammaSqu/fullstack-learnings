@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Change the page body background color to rainbow colors in order when a
+      button is clicked
+    </title>
+
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .inside {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        padding: 10px 25px;
+        font-size: 17px;
+        background-color: black;
+        color: white;
+        border: none;
+      }
+
+      .red {
+        background-color: red;
+      }
+
+      .orange {
+        background-color: orange;
+      }
+
+      .yellow {
+        background-color: yellow;
+        color: black;
+      }
+
+      .green {
+        background-color: green;
+      }
+
+      .blue {
+        background-color: blue;
+      }
+
+      .indigo {
+        background-color: indigo;
+      }
+
+      .violet {
+        background-color: violet;
+      }
+    </style>
+  </head>
+  <body class="red">
+    <div class="container">
+      <button>
+        To
+        <span class="orange">orange</span>
+      </button>
+    </div>
+
+    <script>
+      //When button clicked:
+      //1. The background will change to the color that showed on the button
+      //2. The button text will change to the next colour
+      //3. That will also change the colour of the SPAN bg colour
+      let button = document.querySelector('button');
+      let body = document.querySelector('body');
+      let span = document.querySelector('span');
+
+      //Method 1 - Simplest
+      let getNextColour = function (currentColour) {
+        currentColour = body.className;
+        if (currentColour === 'red') {
+          body.classList.remove('red');
+
+          body.classList.add('orange');
+
+          span.classList.remove('orange');
+          span.classList.add('yellow');
+          span.innerHTML = 'yellow';
+        }
+
+        if (currentColour === 'orange') {
+          body.classList.remove('orange');
+
+          body.classList.add('yellow');
+
+          span.classList.remove('yellow');
+          span.classList.add('green');
+          span.innerHTML = 'green';
+        }
+
+        if (currentColour === 'yellow') {
+          body.classList.remove('yellow');
+
+          body.classList.add('green');
+
+          span.classList.remove('green');
+          span.classList.add('blue');
+          span.innerHTML = 'blue';
+        }
+
+        if (currentColour === 'green') {
+          body.classList.remove('green');
+
+          body.classList.add('blue');
+
+          span.classList.remove('blue');
+          span.classList.add('indigo');
+          span.innerHTML = 'indigo';
+        }
+
+        if (currentColour === 'blue') {
+          body.classList.remove('blue');
+
+          body.classList.add('indigo');
+
+          span.classList.remove('indigo');
+          span.classList.add('violet');
+          span.innerHTML = 'violet';
+        }
+
+        if (currentColour === 'indigo') {
+          body.classList.remove('indigo');
+
+          body.classList.add('violet');
+
+          span.classList.remove('violet');
+          span.classList.add('red');
+          span.innerHTML = 'red';
+        }
+
+        if (currentColour === 'violet') {
+          body.classList.remove('violet');
+
+          body.classList.add('red');
+
+          span.classList.remove('red');
+          span.classList.add('orange');
+          span.innerHTML = 'orange';
+        }
+      };
+
+      //Method 2
+      let allColours;
+
+      button.addEventListener('click');
+    </script>
+  </body>
+</html>
