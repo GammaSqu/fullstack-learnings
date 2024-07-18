@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Convert input text to uppercase when a button is clicked</title>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        background-color: grey;
+        font-size: 25px;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin: 20px;
+        border-radius: 10px;
+        width: 400px;
+        align-items: center;
+      }
+      .title {
+        font-weight: bold;
+        padding-bottom: 20px;
+      }
+      input {
+        font-size: 20px;
+        margin-top: 10px;
+        text-indent: 20px;
+        padding: 10px 0;
+
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid;
+      }
+      button {
+        width: 100%;
+        font-size: 15px;
+        color: white;
+        padding: 15px 0;
+        margin-top: 10px;
+
+        border-radius: 5px;
+        border: none;
+        background-color: blue;
+      }
+      button:hover {
+        background-color: darkblue;
+      }
+      .output {
+        margin-top: 10px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Convert Text to Uppercase</div>
+      <input type="text" placeholder="Enter text here" />
+      <button>Convert to uppercase</button>
+      <div class="output"></div>
+    </div>
+
+    <script>
+      let input = document.querySelector('input');
+      let button = document.querySelector('button');
+      let output = document.querySelector('.output');
+
+      button.addEventListener('click', function () {
+        output.innerHTML = input.value.toUpperCase();
+      });
+    </script>
+  </body>
+</html>

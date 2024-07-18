@@ -1,0 +1,50 @@
+Requirements:
+
+1. When you click the button, the bg colour of body will change colour
+2. This means my body will have the class matching the class in the current span
+3. After that my span will have the class indicating the next color
+
+red / orange -> orange / yellow -> yellow / green
+
+
+Code
+1. Create a onChangeClick function
+2. Add that function to our button
+3. WHen the button is click - or when onChangeClick is called
+4. Get the class name that set the background-color for the body
+
+5. Remove that class name from the body
+
+6. Get the current class name that set the background-color for the span
+7. Set the class name we get above in step 6 to our body
+8. Get the next color classname based on the current classname color red -> orange
+    8.1 Simplest way will be if else - new function getNextColor(currentColor) - from 6
+if (currentColor === 'red') {
+    return 'orange';
+} else if (currentColor === 'orange') {
+    return 'yellow';
+} ...
+
+ else if (currentColor === 'violet') {
+    return 'red';
+}
+
+    8.2 Create a simple array in order ['red', 'orange', '....']
+    so if it's red we want orange
+    red is index 0 ---> the next one will be index 1
+    yellow is index 2 ---> the next one will be index 3
+
+    so it means we need to get the index of the currentColor
+    the next color will be the current index above + 1
+
+    let currentColorIndex = colorArray.indexOf(currentColor) // will give you 0 or 1 or 2
+    let nextColorIndex = currentColorIndex + 1;
+
+    if (nextColorIndex === colorArray.length - 1) {
+        nextColorIndex = 0;
+    }
+
+    let nextColor = colorArray[nextColorIndex];
+
+
+7. After that, the button colour will change to the next colour
