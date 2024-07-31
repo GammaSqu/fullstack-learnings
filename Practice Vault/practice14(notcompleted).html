@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Intermediate - Move a box within a container when buttons are clicked
+    </title>
+
+    <style>
+      body {
+        display: flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .controls {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        margin: 20px;
+      }
+
+      button {
+        height: 60px;
+        width: 60px;
+        border: 1px solid grey;
+      }
+
+      button:hover {
+        background-color: darkgrey;
+      }
+
+      .border {
+        background-color: transparent;
+        width: 700px;
+        height: 500px;
+        border-style: dashed;
+        margin: 10px auto;
+      }
+      .box {
+        background-color: grey;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <div class="controls">
+          <button class="upBtn" data-component="direction">Up</button>
+          <div>
+            <button class="leftBtn" data-component="direction">Left</button>
+            <button class="downBtn" data-component="direction">Down</button>
+            <button class="rightBtn" data-component="direction">Right</button>
+          </div>
+        </div>
+        <div class="border">
+          <div class="box"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const movingBox = document.querySelector('.box');
+      const directionButtons = document.querySelectorAll('button');
+
+      const onDirectionButton = (event) => {
+        const button = event.target;
+      };
+
+      for (const i = 0; i < allButtons.length; i++) {
+        const button = allButtons[i];
+        button.addEventListener('click', onDirectionButton);
+      }
+    </script>
+  </body>
+</html>

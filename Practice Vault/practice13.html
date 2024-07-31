@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Loop - Print multiple user profiles on the screen</title>
+
+    <style>
+      .container {
+        background-color: white;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 500px;
+      }
+
+      .shadow {
+        box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid #d5d3d3;
+      }
+
+      button {
+        padding: 20px 30px;
+        font-size: 18px;
+        border: 1px solid #cbcbcb;
+      }
+      .list {
+        margin: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+      }
+
+      .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 400px;
+        padding: 20px;
+        font-size: 18px;
+      }
+
+      img {
+        width: 100px;
+        border-radius: 50px;
+      }
+      .profileInfo {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container shadow">
+      <div>
+        <h2>List of Profiles</h2>
+        <button>Print Profiles</button>
+      </div>
+    </div>
+
+    <div class="list"></div>
+
+    <script>
+      const button = document.querySelector('button');
+      const list = document.querySelector('.list');
+
+      const profiles = [
+        {
+          fullName: 'Alice Johnson',
+          gender: 'Female',
+          occupation: 'Web Developer',
+          avatar: {
+            images: {
+              large:
+                'https://t3.ftcdn.net/jpg/05/98/48/88/360_F_598488869_fiLUgajDxyaoxE9D3SuHMZfD56IjrBXe.jpg',
+            },
+          },
+        },
+        {
+          fullName: 'Bob Smith',
+          gender: 'Male',
+          occupation: 'Graphic Designer',
+          avatar: {
+            images: {
+              large:
+                'https://sm.ign.com/ign_nordic/cover/a/avatar-gen/avatar-generations_prsz.jpg',
+            },
+          },
+        },
+        {
+          fullName: 'Carol White',
+          gender: 'Female',
+          occupation: 'Project Manager',
+          avatar: {
+            images: {
+              large:
+                'https://t3.ftcdn.net/jpg/05/98/48/88/360_F_598488869_fiLUgajDxyaoxE9D3SuHMZfD56IjrBXe.jpg',
+            },
+          },
+        },
+        {
+          fullName: 'Dave Brown',
+          gender: 'Male',
+          occupation: 'Software Engineer',
+          avatar: {
+            images: {
+              large:
+                'https://sm.ign.com/ign_nordic/cover/a/avatar-gen/avatar-generations_prsz.jpg',
+            },
+          },
+        },
+      ];
+
+      const printProfiles = () => {
+        const items = profiles.map((currentProfile) => {
+          const item = `
+          <div class="item shadow">
+        <img
+          src=${currentProfile.avatar.images.large}
+        />
+        <div class="profileInfo">
+          <div><label>Name: </label><span>${currentProfile.fullName}</span></div>
+          <div><label>Gender: </label><span>${currentProfile.gender}</span></div>
+          <div><label>Occupation: </label><span>${currentProfile.occupation}</span></div>
+        </div>
+      </div>
+          `;
+
+          return item;
+        });
+
+        const content = items.join('');
+        list.innerHTML = content;
+      };
+
+      button.addEventListener('click', printProfiles);
+    </script>
+  </body>
+</html>
