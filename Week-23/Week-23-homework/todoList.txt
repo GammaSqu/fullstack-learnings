@@ -1,0 +1,62 @@
+To Do List Process:
+
+Main Components of the ToDoList:
+
+1. Input box
+2. Action Items (toDoItems)
+3. Footer (not just filter options but other information in it)
+
+
+PREVIOUS NOTES FROM EXAM:
+
+Input:
+1. An input that you can type in - purpose?= to name your action 
+2. There is no extra button to set a task
+    NOTE: No need to make a button, phew ~
+3. When complete, you press ENTER, then it will create a drop down list
+    NOTE: Need to see how do I js an ENTER event[?]
+4. After ENTER:
+    - the list is created
+    - ALSO, there is an down arrow by the indent of input (function? = checks/selects all list options)
+
+Dropdown List:
+1. Shows what actions you have entered in the form of a checklist:
+    - Checkbox
+    - Title/name of item
+    - An "X" icon (to delete corresponding action)
+2. Underneath the list (at bottom), are some command prompts. It includes:
+    - Label of # of items (actions)
+    - Filter (ALL, ACTIVE, COMPLETED)
+    - Clear Completed
+
+
+Things to keep in mind (in summary):
+1. Important aspects:
+    * INPUT 
+        - ENTER command 
+        - a DOWN ARROW
+    * DROP DOWN
+        - Item list --> checkbox, name, X icon
+        - Fliter properties --> # of items, filters (all, active, commpleted), clear completed
+
+
+Ok how to create js component.........
+
+
+
+
+Need to have MAIN.JS!!!!!
+
+the main js should contain functions of:
+
+    - a function after enter
+    - a fcuntion for action lists
+    - and functions of bottom filter(?)
+
+
+Action List:
+Once user has entered the value in input and pressed the enter key:
+    1. The input value will be resetted
+        input.value = ''
+    2. The value will be then displayed in another div underneath the box
+        - Will need to pass the value from toDoInput to toDoAction... how? (need to reference the quiz app?)

@@ -2,10 +2,82 @@
 <html lang="en">
   <head>
     <title>Loop - Print an array of names</title>
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        justify-content: center;
+        font-size: 30px;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        width: 400px;
+        padding: 20px 30px;
+        padding-top: 30px;
+        margin-bottom: 20px;
+      }
+
+      .shadow {
+        border: solid 1px rgba(0, 0, 0, 0.15);
+        box-shadow: 8px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .title {
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      button {
+        font-size: 15px;
+        padding: 10px 30px;
+      }
+
+      .list {
+        display: flex;
+      }
+
+      .nameCard {
+        font-size: 20px;
+        padding: 20px 30px;
+        margin: 0 20px;
+      }
+    </style>
   </head>
   <body>
+    <div class="container shadow">
+      <div>
+        <div class="title">List of Names</div>
+        <button>Print Names</button>
+      </div>
+    </div>
+
+    <div class="list"></div>
+
     <script>
-      let names = ['Alice', 'Bob', 'Charlie', 'Diana', 'Edward'];
+      const button = document.querySelector('button');
+      const list = document.querySelector('.list');
+
+      const names = ['Alice', 'Bob', 'Charlie', 'Diana', 'Edward'];
+
+      const listNames = () => {
+        const items = names.map((currentName) => {
+          const item = `<div class = "shadow nameCard">${currentName}</div>`;
+
+          return item;
+        });
+
+        const content = items.join('');
+
+        list.innerHTML = content;
+      };
+
+      button.addEventListener('click', listNames);
     </script>
   </body>
 </html>

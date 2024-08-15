@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Loop - Print 1 to nth number based on the input on the screen</title>
+
+    <style>
+      body {
+        background-color: grey;
+      }
+
+      .container {
+        background-color: white;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 500px;
+      }
+
+      .title {
+        font-weight: bold;
+        margin: 10px 0;
+        font-size: 25px;
+      }
+
+      .secondary {
+        display: flex;
+        gap: 10px;
+      }
+
+      input {
+        height: 43px;
+        flex: 1;
+        text-indent: 10px;
+        font-size: 16px;
+      }
+      button {
+        width: 200px;
+        height: 50px;
+        font-size: 16px;
+      }
+
+      .items {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <div class="title">List of Numbers</div>
+        <div class="secondary">
+          <input type="number" min="0" max="999" placeholder="Number" />
+          <button>Print</button>
+        </div>
+      </div>
+      <ul class="list"></ul>
+    </div>
+
+    <script>
+      const button = document.querySelector('button');
+      const list = document.querySelector('ul');
+      const input = document.querySelector('input');
+
+      //Why is this not working....
+
+      const listNumbers = () => {
+        const numberInput = Number(input.value);
+
+        if (numberInput > 0) {
+          const numbers = [];
+          for (let i = 1; i <= numberInput; i++) {
+            numbers.push(i);
+          }
+
+          const items = numbers.map((currentNumber) => {
+            const item = `<li class="items">${currentNumber}</li>`;
+
+            return item;
+          });
+          console.log(items);
+          const content = items.join('');
+          list.innerHTML = content;
+        } else {
+          alert('You need to input a positive number');
+        }
+      };
+
+      button.addEventListener('click', listNumbers);
+    </script>
+  </body>
+</html>
