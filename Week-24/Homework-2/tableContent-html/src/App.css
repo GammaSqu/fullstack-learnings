@@ -1,0 +1,25 @@
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: lightgrey;
+}
+
+button {
+  border-radius: 20px;
+  padding: 5px 20px;
+  border: none;
+  background-color: darkgrey;
+}
+
+button:hover {
+  background-color: darkslategray;
+}

@@ -1,0 +1,17 @@
+a {
+  text-decoration: none;
+  border-bottom: 2px dashed orange;
+  color: black;
+  padding: 0 5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.img-gallery img {
+  border-radius: 9999px;
+  width: 180px;
+  margin-right: 10px;
+  border: 6px solid whitesmoke;
+}
