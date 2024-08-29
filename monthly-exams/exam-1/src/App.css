@@ -1,0 +1,27 @@
+.container {
+  margin: auto;
+}
+button {
+  width: 100px;
+  height: 100px;
+  color: white;
+  margin: 0 10px;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: blue;
+}
+.purple {
+  background-color: purple;
+}
+.orange {
+  background-color: orange;
+}
+.black {
+  background-color: black;
+}
